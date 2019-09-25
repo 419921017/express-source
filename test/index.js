@@ -2,6 +2,13 @@
 const express = require('./../lib/express')
 const app = express()
 
+app.use((req, res, next) => {
+  console.log('====================================');
+  console.log('use');
+  console.log('====================================');
+  next()
+})
+
 app.get('/', function (req, res) {
   res.end('Hello World!')
 })
